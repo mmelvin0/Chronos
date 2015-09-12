@@ -1,0 +1,16 @@
+[
+    {
+        "modid": "${modid}",
+        "name": "${modid}",
+        "description": "Change the length of a Minecraft day.",
+        "version": "${version}",
+        "mcversion": "${mcversion}",
+        "url": "",
+        "updateUrl": "",
+        "authorList": ["mmelvin0"],
+        "credits": "",
+        "logoFile": "",
+        "screenshots": [],
+        "dependencies": []
+    }
+]
