@@ -18,6 +18,11 @@ public class TimescaleCommand extends CommandBase {
     }
 
     @Override
+    public int getRequiredPermissionLevel() {
+        return 2;
+    }
+
+    @Override
     public void processCommand(ICommandSender sender, String[] args) {
         if (args.length == 0) {
             sender.addChatMessage(new ChatComponentTranslation("commands.timescale.get", WorldHandler.getScale(sender.getEntityWorld())));
