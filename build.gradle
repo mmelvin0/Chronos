@@ -19,7 +19,11 @@ apply plugin: 'forge'
 
 ext.modid = 'Chronos'
 group = 'chronos'
-version = '0.1'
+version = '1.0.0'
+
+if (System.getenv('BUILD_NUMBER') != null) {
+    version += '.' + System.getenv('BUILD_NUMBER')
+}
 
 archivesBaseName = "${project.modid}"
 
