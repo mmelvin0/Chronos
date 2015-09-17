@@ -4,6 +4,7 @@ import net.minecraft.command.CommandBase;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.util.ChatComponentTranslation;
 import net.minecraft.util.EnumChatFormatting;
+import net.minecraft.world.World;
 
 public class TimescaleCommand extends CommandBase {
 
@@ -34,7 +35,9 @@ public class TimescaleCommand extends CommandBase {
                 scale = -1;
             }
             if (scale >= 0) {
+                World world = sender.getEntityWorld();
                 WorldHandler.setScale(sender.getEntityWorld(), scale);
+                NetworkHandler.getInstance().sync(world);
                 sender.addChatMessage(new ChatComponentTranslation("commands.timescale.set", WorldHandler.getScale(sender.getEntityWorld())));
             } else {
                 ChatComponentTranslation component = new ChatComponentTranslation("commands.timescale.invalid");

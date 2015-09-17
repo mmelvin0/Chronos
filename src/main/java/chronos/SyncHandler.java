@@ -8,7 +8,7 @@ public class SyncHandler implements IMessageHandler<SyncMessage, IMessage> {
 
     @Override
     public IMessage onMessage(SyncMessage message, MessageContext context) {
-        WorldHandler.setScale(message.dimension, message.scale);
+        Chronos.proxy.sync(message);
         return null;
     }
 

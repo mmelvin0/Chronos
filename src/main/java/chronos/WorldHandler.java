@@ -1,11 +1,8 @@
 package chronos;
 
-import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import net.minecraft.client.Minecraft;
 import net.minecraft.world.World;
 import net.minecraftforge.event.world.WorldEvent;
-import org.apache.logging.log4j.Level;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -27,18 +24,8 @@ public class WorldHandler {
         return worlds.get(world).getScale();
     }
 
-    static public void setScale(int dimension, double scale) {
-        World world = Minecraft.getMinecraft().theWorld;
-        if (world.provider.dimensionId == dimension) {
-            worlds.get(world).setScale(scale);
-        } else {
-            FMLLog.log(Info.MODID, Level.ERROR, String.format("Dimension mismatch during sync (client: %d, server: %d)", world.provider.dimensionId, dimension));
-        }
-    }
-
     static public void setScale(World world, double scale) {
         worlds.get(world).setScale(scale);
-        NetworkHandler.getInstance().sync(world);
     }
 
     static public long tick(World world) {
