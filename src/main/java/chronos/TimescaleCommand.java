@@ -36,7 +36,7 @@ public class TimescaleCommand extends CommandBase {
             }
             if (scale >= 0) {
                 World world = sender.getEntityWorld();
-                WorldHandler.setScale(sender.getEntityWorld(), scale);
+                WorldHandler.setScale(world, scale);
                 NetworkHandler.getInstance().sync(world);
                 sender.addChatMessage(new ChatComponentTranslation("commands.timescale.set", WorldHandler.getScale(sender.getEntityWorld())));
             } else {
