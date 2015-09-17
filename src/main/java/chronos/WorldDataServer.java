@@ -27,10 +27,11 @@ public class WorldDataServer extends WorldSavedData implements IWorldData {
         return wd;
     }
 
-    public WorldDataServer() {
+    private WorldDataServer() {
         super(Info.MODID);
     }
 
+    @SuppressWarnings("unused")
     public WorldDataServer(String id) {
         super(id);
     }

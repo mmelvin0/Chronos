@@ -9,6 +9,7 @@ public class SyncMessage implements IMessage {
 
     double scale;
 
+    @SuppressWarnings("unused")
     public SyncMessage() {}
 
     SyncMessage(int d, double s) {

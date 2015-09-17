@@ -1,8 +1,6 @@
 package chronos;
 
-import net.minecraft.world.World;
-
-public interface IWorldData {
+interface IWorldData {
 
     double getTime();
 

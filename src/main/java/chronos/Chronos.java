@@ -15,17 +15,20 @@ public class Chronos {
     static public Proxy proxy;
 
     @Mod.EventHandler
+    @SuppressWarnings("unused")
     public void onPreInit(FMLPreInitializationEvent event) {
         NetworkHandler.getInstance().register();
     }
 
     @Mod.EventHandler
+    @SuppressWarnings("unused")
     public void onInit(FMLInitializationEvent event) {
         FMLCommonHandler.instance().bus().register(PlayerHandler.getInstance());
         MinecraftForge.EVENT_BUS.register(WorldHandler.getInstance());
     }
 
     @Mod.EventHandler
+    @SuppressWarnings("unused")
     public void onServerStart(FMLServerStartingEvent event) {
         event.registerServerCommand(new TimescaleCommand());
     }

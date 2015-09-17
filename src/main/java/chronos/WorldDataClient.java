@@ -14,6 +14,8 @@ public class WorldDataClient implements IWorldData {
         return data;
     }
 
+    private WorldDataClient() {}
+
     public double getScale() {
         return scale;
     }
@@ -22,9 +24,7 @@ public class WorldDataClient implements IWorldData {
         if (s < 0) {
             s = 0;
         }
-        if (s != scale) {
-            scale = s;
-        }
+        scale = s;
     }
 
     public double getTime() {

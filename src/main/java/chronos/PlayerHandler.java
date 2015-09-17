@@ -17,6 +17,7 @@ public class PlayerHandler {
     }
 
     @SubscribeEvent
+    @SuppressWarnings("unused")
     public void onLogin(PlayerEvent.PlayerLoggedInEvent event) {
         EntityPlayer player = event.player;
         if (player instanceof EntityPlayerMP) {
@@ -25,6 +26,7 @@ public class PlayerHandler {
     }
 
     @SubscribeEvent
+    @SuppressWarnings("unused")
     public void onChangeDimension(PlayerEvent.PlayerChangedDimensionEvent event) {
         EntityPlayer player = event.player;
         if (player instanceof EntityPlayerMP) {

@@ -13,7 +13,7 @@ public class WorldHandler {
 
     static private WorldHandler instance = null;
 
-    static private Map<World, IWorldData> worlds = new HashMap<World, IWorldData>();
+    static private final Map<World, IWorldData> worlds = new HashMap<World, IWorldData>();
 
     static public WorldHandler getInstance() {
         if (instance == null) {
@@ -31,6 +31,7 @@ public class WorldHandler {
         FMLLog.log(Info.MODID, Level.INFO, String.format("Set %s time scale to %s", world.provider.getDimensionName(), scale));
     }
 
+    @SuppressWarnings("unusued")
     static public long tick(World world) {
         IWorldData wd = worlds.get(world);
         long currentTime = world.getWorldTime();
@@ -44,12 +45,14 @@ public class WorldHandler {
     }
 
     @SubscribeEvent
+    @SuppressWarnings("unused")
     public void onLoad(WorldEvent.Load event) {
         World world = event.world;
         worlds.put(world, world.isRemote ? WorldDataClient.get(world) : WorldDataServer.get(world));
     }
 
     @SubscribeEvent
+    @SuppressWarnings("unused")
     public void onUnload(WorldEvent.Unload event) {
         worlds.remove(event.world);
     }
